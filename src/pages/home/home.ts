@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { VideoPlayer ,VideoOptions } from '@ionic-native/video-player';
+// import { VideoPlayer ,VideoOptions } from '@ionic-native/video-player';
 
 @Component({
   selector: 'page-home',
@@ -8,22 +8,25 @@ import { VideoPlayer ,VideoOptions } from '@ionic-native/video-player';
 })
 export class HomePage {
 
-videoOpts : VideoOptions ;
+// videoOpts : VideoOptions ;
 
-constructor(public navCtrl: NavController,private videoPlayer : VideoPlayer) {
-
+constructor(public navCtrl: NavController) {
 }
 
-public playVideo(){
-  this.videoOpts = {volume : 1.0};
-  this.videoPlayer.play('res/kl.mp4').then(() => {
-    console.log('video completed');
-  }).catch(err => {
-    console.log(err);
-  });
-}
-public stopPlayingVideo(){
-  this.videoPlayer.close();
-}
+// constructor(public navCtrl: NavController,private videoPlayer : VideoPlayer) {
+
+// }
+
+// public playVideo(){
+//   this.videoOpts = {volume : 1.0};
+//   this.videoPlayer.play('res/kl.mp4').then(() => {
+//     console.log('video completed');
+//   }).catch(err => {
+//     console.log(err);
+//   });
+// }
+// public stopPlayingVideo(){
+//   this.videoPlayer.close();
+// }
 
 }

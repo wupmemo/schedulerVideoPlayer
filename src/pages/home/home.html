@@ -7,23 +7,23 @@
 <ion-content padding>
   <ion-card>
     <ion-card-header>
-      <h1 ion-text color="primary">Welcome to Schedular</h1>
+      <h2 ion-text color="primary" style="font-weight: bold" text-center>Welcome to Schedular</h2>
     </ion-card-header>
-    <ion-card-content ion-text color="primary">
+    <ion-card-content ion-text color="primary" text-center>
       Below list of videos on your schedule today. to modify or add new please click schedule Tab.
     </ion-card-content>
   </ion-card>
-  <button ion-button (click)="playVideo()">Play Video</button>
-  <button ion-button (click)="stopPlayingVideo()">Stop playing Video</button>
-<!--   <ion-card>
-    <img src="assets/imgs/kl.jpg"/>
+  <ion-card>
     <ion-card-content>
       <ion-card-title>
         <h2> Sight-seeing KL</h2>
-        </ion-card-title>
-      <p>
+      </ion-card-title>
+      <video id="videoPlayer" controls="controls" preload="metadata" preload="true" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+       <source src="res/kl.mp4" type="video/mp4" />
+      </video>
+      <label>
         Learn about the amazing KL spots for tourists and be the one to make the best of your time here.
-      </p>
+      </label>
     </ion-card-content>
-  </ion-card> -->
+  </ion-card>
 </ion-content>
