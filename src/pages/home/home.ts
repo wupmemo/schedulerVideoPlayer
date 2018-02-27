@@ -13,20 +13,11 @@ export class HomePage {
 constructor(public navCtrl: NavController) {
 }
 
-// constructor(public navCtrl: NavController,private videoPlayer : VideoPlayer) {
-
-// }
-
-// public playVideo(){
-//   this.videoOpts = {volume : 1.0};
-//   this.videoPlayer.play('res/kl.mp4').then(() => {
-//     console.log('video completed');
-//   }).catch(err => {
-//     console.log(err);
-//   });
-// }
-// public stopPlayingVideo(){
-//   this.videoPlayer.close();
-// }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SchedulePage');
+    setTimeout(function(){
+    document.getElementById("videoPlayer").play();
+    }, 5000);
+  }
 
 }

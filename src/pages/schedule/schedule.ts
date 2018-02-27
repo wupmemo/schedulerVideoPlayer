@@ -16,11 +16,20 @@ import { Storage } from '@ionic/storage';
 })
 export class SchedulePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SchedulePage');
+    var playList = {
+      movie1: "Sight-seeing KL",
+      movie2: "Sight-seeing KL",
+      movie3: "Sight-seeing KL",
+      movie4: "Sight-seeing KL",
+      movie5: "Sight-seeing KL",
+      movie6: "Sight-seeing KL",
+      movie7: "Sight-seeing KL",
+    }
   }
 
 }
