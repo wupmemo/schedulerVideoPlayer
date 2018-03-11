@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+// import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the SchedulePage page.
@@ -21,15 +21,6 @@ export class SchedulePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SchedulePage');
-    var playList = {
-      movie1: "Sight-seeing KL",
-      movie2: "Sight-seeing KL",
-      movie3: "Sight-seeing KL",
-      movie4: "Sight-seeing KL",
-      movie5: "Sight-seeing KL",
-      movie6: "Sight-seeing KL",
-      movie7: "Sight-seeing KL",
-    }
   }
 
 }

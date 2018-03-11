@@ -10,8 +10,16 @@
       <h2 ion-text color="primary" style="font-weight: bold" text-center>Welcome to Schedular</h2>
     </ion-card-header>
     <ion-card-content ion-text color="primary" text-center>
-      Below list of videos on your schedule today. to modify or add new please click schedule Tab.
+      You may add the time which you want the video player to start playing after, ex : "5" will play the video after 5 minutes.
     </ion-card-content>
+    <ion-card-content>
+    <ion-item>
+      <ion-input type="number" min="5000" [value]="playin" [(ngModel)]="playin" placeholder="Play video after 5 min"></ion-input>
+    </ion-item>
+    </ion-card-content>
+    <div class="timerButton">
+      <button ion-button round (click)="PlayVideoTimer(5000)">Play</button>
+    </div>
   </ion-card>
   <ion-card>
     <ion-card-content>
@@ -24,6 +32,7 @@
       <label>
         Learn about the amazing KL spots for tourists and be the one to make the best of your time here.
       </label>
+      <h1>{{videosList}}</h1>
     </ion-card-content>
   </ion-card>
 </ion-content>
