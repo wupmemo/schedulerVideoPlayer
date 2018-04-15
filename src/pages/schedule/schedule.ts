@@ -19,8 +19,25 @@ export class SchedulePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  playVideos(){
+    //playing video after a certain of time.
+    console.log('You selected the following time to play video:');
+    var hours = (document.getElementById('hoursSelected').value);
+    var minutes = (document.getElementById('minutesSelected').value);
+    var daytime = (document.getElementById('daytimeSelected').value);
+    if (daytime=='PM') {
+        console.log('now playing PM');
+    }
+    var playtime = hours +':'+ minutes;
+    console.log(playtime);
+
+    // var videoPlayer:any = document.getElementById("videoPlayer");
+    // videoPlayer.play();
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad SchedulePage');
   }
-
 }
+
+

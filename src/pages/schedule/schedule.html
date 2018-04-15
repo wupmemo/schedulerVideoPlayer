@@ -11,9 +11,20 @@
   </ion-navbar>
 
 </ion-header>
-
 <!--we will add a key, value pairs of time and movie name-->
 <ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <h2 ion-text color="default" style="font-weight: bold" text-center>
+        <ion-icon name="ios-information-circle-outline"> <strong>How to use ?!</strong></ion-icon>
+      </h2>
+    </ion-card-header>
+    <ion-card-content ion-text color="default" text-center> Just set the timer below to the movie you want to play and a timer will start in the background which will automatically play video on time set.
+    </ion-card-content>
+    <ion-card-content>
+      <ion-icon name="ios-information-circle-outline" style="font-size: 12px;"> Note: Videos will only play during the day. Please donot close the APP.</ion-icon>
+    </ion-card-content>
+  </ion-card>
   <table>
     <thead>
     <tr>
@@ -23,33 +34,51 @@
     </thead>
     <tbody>
     <tr>
-      <td contenteditable="true">09:35 AM</td>
-      <td contenteditable="true">Movie 1</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">10:35 AM</td>
-      <td contenteditable="true">Movie 2</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">11:45 AM</td>
-      <td contenteditable="true">Movie 3</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">12:55 PM</td>
-      <td contenteditable="true">Movie 4</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">01:25 PM</td>
-      <td contenteditable="true">Movie 5</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">02:25 PM</td>
-      <td contenteditable="true">Movie 6</td>
-    </tr>
-    <tr>
-      <td contenteditable="true">03:25 PM</td>
-      <td contenteditable="true">Movie 7</td>
+      <td>
+        <select id="hoursSelected">
+          <option value="01">01</option>
+          <option value="02">02</option>
+          <option value="03">03</option>
+          <option value="04">04</option>
+          <option value="05">05</option>
+          <option value="06">06</option>
+          <option value="07">07</option>
+          <option value="08">08</option>
+          <option value="09">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <label>:</label>
+        <select id="minutesSelected">
+          <option value="00">00</option>
+          <option value="05">05</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
+          <option value="35">35</option>
+          <option value="40">40</option>
+          <option value="45">45</option>
+          <option value="50">50</option>
+          <option value="55">55</option>
+        </select>
+        <label>:</label>
+        <select id="daytimeSelected">
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>
+      </td>
+      <td>
+        <select id="videos">
+          <option value="res/intro_to_kl.mp4">Visit KL</option>
+        </select>
+      </td>
     </tr>
     </tbody>
   </table>
+  <button ion-button (click)="playVideos()">
+    <ion-icon name="play">&nbsp;Play</ion-icon>
+  </button>
 </ion-content>

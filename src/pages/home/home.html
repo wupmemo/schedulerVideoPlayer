@@ -9,16 +9,10 @@
     <ion-card-header>
       <h2 ion-text color="primary" style="font-weight: bold" text-center>Welcome to Schedular</h2>
     </ion-card-header>
-    <ion-card-content ion-text color="primary" text-center>
-      You may add the time which you want the video player to start playing after, ex : "5" will play the video after 5 minutes.
-    </ion-card-content>
-    <ion-card-content>
-    <ion-item>
-      <ion-input type="number" min="5000" [value]="playin" [(ngModel)]="playin" placeholder="Play video after 5 min"></ion-input>
-    </ion-item>
+    <ion-card-content ion-text color="primary" text-center> Schedular is an APP for scheduling videos to be played according to predefined schedule. Click on Schedule to set timer onto the desired time to play the video.
     </ion-card-content>
     <div class="timerButton">
-      <button ion-button round (click)="PlayVideoTimer(5000)">Play</button>
+      <!-- <button ion-button round (click)="PlayVideoTimer(5000)">Play</button> -->
     </div>
   </ion-card>
   <ion-card>
@@ -27,7 +21,7 @@
         <h2> Sight-seeing KL</h2>
       </ion-card-title>
       <video id="videoPlayer" controls="controls" preload="metadata" preload="true" webkit-playsinline="webkit-playsinline" class="videoPlayer">
-       <source src="res/kl.mp4" type="video/mp4" />
+       <source src="res/intro_to_kl.mp4" type="video/mp4" />
       </video>
       <label>
         Learn about the amazing KL spots for tourists and be the one to make the best of your time here.
