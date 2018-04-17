@@ -21,11 +21,16 @@ export class SchedulePage {
   }
 
   playVideos() {
-    var daytime:any = <HTMLInputElement>(document.getElementById('daytimeSelected')).value;
-    var hours:any = <HTMLInputElement>(document.getElementById('hoursSelected')).value;
-    var minutes:any =<HTMLInputElement>(document.getElementById('minutesSelected')).value;
+    var daytime:any = document.getElementById('daytimeSelected')["value"];
+    var hours:any = document.getElementById('hoursSelected')["value"];
+    var minutes:any =document.getElementById('minutesSelected')["value"];
+    console.log(daytime)
+    console.log(hours)
+    console.log(minutes)
     var hoursPM:any = parseInt(hours) + 12;
+    console.log(hoursPM)
     var rule = new schedule.RecurrenceRule();
+    console.log(rule)
 
 
     // Play video if daytime AM
@@ -34,7 +39,6 @@ export class SchedulePage {
       rule.minute = minutes;
       rule.hour = hours;
       schedule.scheduleJob(rule, function(){
-        console.log(rule);
         var videoPlayer:any = document.getElementById("videoPlayer");
         videoPlayer.play();
       });
