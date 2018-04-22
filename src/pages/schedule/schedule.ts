@@ -21,39 +21,53 @@ export class SchedulePage {
   }
 
   playVideos() {
+
     var daytime:any = document.getElementById('daytimeSelected')["value"];
     var hours:any = document.getElementById('hoursSelected')["value"];
     var minutes:any =document.getElementById('minutesSelected')["value"];
-    console.log(daytime)
-    console.log(hours)
-    console.log(minutes)
     var hoursPM:any = parseInt(hours) + 12;
-    console.log(hoursPM)
     var rule = new schedule.RecurrenceRule();
-    console.log(rule)
-
+    var videos:any = document.getElementById('videos')["value"];
+    var videoPlayer:any = document.getElementById("videoPlayer");
+    var videoPlayer2:any = document.getElementById("videoPlayer2");
+    alert("Now will be playing video at" + " " + hours +":" + minutes);
 
     // Play video if daytime AM
-    if (daytime=='AM') {
-      console.log('Now daytime set to AM');
-      rule.minute = minutes;
-      rule.hour = hours;
-      schedule.scheduleJob(rule, function(){
-        var videoPlayer:any = document.getElementById("videoPlayer");
-        videoPlayer.play();
-      });
-    }
+      if (daytime=='AM') {
+        rule.minute = minutes;
+        rule.hour = hours;
+        schedule.scheduleJob(rule, function(){
+          if (videos=='video1'){
+            videoPlayer.style.display = "block";
+            videoPlayer2.style.display = "none";
+            videoPlayer.play();
+          }
+          if (videos=='video2'){
+            videoPlayer.style.display = "none";
+            videoPlayer2.style.display = "block";
+            videoPlayer2.play();
+          }
+        });
+      }
 
     // Play video if daytime PM
-    if (daytime=='PM') {
-      console.log('Now daytime set to PM');
-      rule.minute = minutes;
-      rule.hour = hoursPM;
-      schedule.scheduleJob(rule, function(){
-        var videoPlayer:any = document.getElementById("videoPlayer");
-        videoPlayer.play();
-      });
-    }
+      if (daytime=='PM') {
+        rule.minute = minutes;
+        rule.hour = hoursPM;
+        schedule.scheduleJob(rule, function(){
+          if (videos=='video1'){
+            videoPlayer.style.display = "block";
+            videoPlayer2.style.display = "none";
+            videoPlayer.play();
+          }
+          if (videos=='video2'){
+            videoPlayer.style.display = "none";
+            videoPlayer2.style.display = "block";
+            videoPlayer2.play();
+          }
+        });
+      }
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SchedulePage');
