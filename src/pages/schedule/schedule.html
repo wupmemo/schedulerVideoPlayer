@@ -15,72 +15,69 @@
 <ion-content padding>
   <ion-card>
     <ion-card-header>
-      <h2 ion-text color="default" style="font-weight: bold" text-center>
+      <h2 ion-text color="default" style="font-weight: bold">
         <ion-icon name="ios-information-circle-outline"> <strong>How to use ?!</strong></ion-icon>
       </h2>
     </ion-card-header>
-    <ion-card-content ion-text color="default" text-center> Just set the timer below to the movie you want to play and a timer will start in the background which will automatically play video on time set.
-    </ion-card-content>
-    <ion-card-content>
-      <ion-icon name="ios-information-circle-outline" style="font-size: 12px;"> Note: Videos will only play during the day. Please donot close the APP.</ion-icon>
+    <ion-card-content ion-text color="default">
+    <ol>
+      <li>Choose the video you want to play from the select menu</li>
+      <li>To add a new video click the Upload Video icon button <ion-icon name="ios-add-circle"></ion-icon>
+      </li>
+      <li>Set the timer to the specific time you want to play video in format<span style="font-weight: bold;"> HH:MM:AM/PM</span> </li>
+      <li> Click the clipboard icon to schedule the video player to play the selected video</li>
+    </ol>
     </ion-card-content>
   </ion-card>
-  <table>
-    <thead>
-    <tr>
-      <th>Time</th>
-      <th>Movie</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>
-        <select id="hoursSelected">
-          <option value="01">01</option>
-          <option value="02">02</option>
-          <option value="03">03</option>
-          <option value="04">04</option>
-          <option value="05">05</option>
-          <option value="06">06</option>
-          <option value="07">07</option>
-          <option value="08">08</option>
-          <option value="09">09</option>
-          <option value="10">10</option>
-          <option value="11">11</option>
-          <option value="12">12</option>
-        </select>
-        <label>:</label>
-        <select id="minutesSelected">
-          <option value="00">00</option>
-          <option value="05">05</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-          <option value="25">25</option>
-          <option value="30">30</option>
-          <option value="35">35</option>
-          <option value="40">40</option>
-          <option value="45">45</option>
-          <option value="50">50</option>
-          <option value="55">55</option>
-          <option value="57">57</option>
-        </select>
-        <label>:</label>
-        <select id="daytimeSelected">
-          <option value="AM">AM</option>
-          <option value="PM">PM</option>
-        </select>
-      </td>
-      <td>
-        <select id="videos">
-          <option value="video1">Visit KL</option>
-          <option value="video2">Visit KL 2</option>
-        </select>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-  <button ion-button (click)="playVideos()">
-    <ion-icon name="play">&nbsp;Play</ion-icon>
-  </button>
+  <ion-card>
+    <ion-list>
+      <ion-item>
+        <ion-label>Select video</ion-label>
+        <ion-select [(ngModel)]="videosList">
+          <!-- <ion-option *ngFor="#video of videosList" value="{{video}}">{{videosList[video]}}</ion-option> -->
+          <ion-option>{{videosList}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <button ion-button block outline (click)="uploadVideo()"><ion-icon name="ios-add-circle"> Upload Video</ion-icon></button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card>
+    <table>
+      <tbody>
+      <tr>
+        <td>
+          <input class="timer-selector" id="hoursSelected" type="number" value="00" min="0">
+          <label>:</label>
+          <input class="timer-selector" id="minutesSelected" type="number" value="00" min="0">
+          <label>:</label>
+          <select id="daytimeSelected">
+            <option value="AM">AM</option>
+            <option value="PM" selected>PM</option>
+          </select>
+        </td>
+        <td>
+          <button ion-button (click)="addVideosToList()">
+            <ion-icon ios="ios-clipboard" md="md-clipboard"></ion-icon>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </ion-card>
+  <ion-card>
+    <table>
+      <thead>
+        <th text-center>Time</th>
+        <th text-center>Movie</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td text-center>sdsd</td>
+          <td text-center>sdsd</td>
+        </tr>
+      </tbody>
+    </table>
+  </ion-card>
 </ion-content>

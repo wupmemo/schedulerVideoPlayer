@@ -16,57 +16,41 @@ import schedule from 'node-schedule'
   templateUrl: 'schedule.html',
 })
 export class SchedulePage {
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log('constructor method is called.');
+  }
+
+
+  uploadVideo() {
+    console.log('videos will now load');
+  }
+
+  addVideosToList() {
+    console.log('adding video names to list');
   }
 
   playVideos() {
+    //this function called only to play a specific video
+  /* Global Variables used in all functions */
+  // var daytime:any = document.getElementById('daytimeSelected')["value"];
+  // var hours:any = document.getElementById('hoursSelected').value;
+  // var minutes:any =document.getElementById('minutesSelected').value;
 
-    var daytime:any = document.getElementById('daytimeSelected')["value"];
-    var hours:any = document.getElementById('hoursSelected')["value"];
-    var minutes:any =document.getElementById('minutesSelected')["value"];
-    var hoursPM:any = parseInt(hours) + 12;
-    var rule = new schedule.RecurrenceRule();
-    var videos:any = document.getElementById('videos')["value"];
-    var videoPlayer:any = document.getElementById("videoPlayer");
-    var videoPlayer2:any = document.getElementById("videoPlayer2");
-    alert("Now will be playing video at" + " " + hours +":" + minutes);
+  // var hoursPM:any = parseInt(hours) + 12;
+  // var rule = new schedule.RecurrenceRule();
+  // var videoPlayer:any = document.getElementById("videoPlayer");
+  /* end of global variables */
 
-    // Play video if daytime AM
-      if (daytime=='AM') {
-        rule.minute = minutes;
-        rule.hour = hours;
-        schedule.scheduleJob(rule, function(){
-          if (videos=='video1'){
-            videoPlayer.style.display = "block";
-            videoPlayer2.style.display = "none";
-            videoPlayer.play();
-          }
-          if (videos=='video2'){
-            videoPlayer.style.display = "none";
-            videoPlayer2.style.display = "block";
-            videoPlayer2.play();
-          }
-        });
-      }
-
-    // Play video if daytime PM
-      if (daytime=='PM') {
-        rule.minute = minutes;
-        rule.hour = hoursPM;
-        schedule.scheduleJob(rule, function(){
-          if (videos=='video1'){
-            videoPlayer.style.display = "block";
-            videoPlayer2.style.display = "none";
-            videoPlayer.play();
-          }
-          if (videos=='video2'){
-            videoPlayer.style.display = "none";
-            videoPlayer2.style.display = "block";
-            videoPlayer2.play();
-          }
-        });
-      }
+    /* Play video if daytime PM */
+      // if (daytime=='PM') {
+      //   rule.minute = minutes;
+      //   rule.hour = hoursPM;
+      //   console.log(hoursPM)
+      //   schedule.scheduleJob(rule, function(){
+      //     console.log('Videos are up now ...');
+      //     videoPlayer.play();
+      //   });
+      // }
 
   }
   ionViewDidLoad() {
